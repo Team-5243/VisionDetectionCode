@@ -19,7 +19,6 @@
 	Mat ThreholdImage(Mat img);
 	void findTarget(Mat original, Mat thresholded, Target& targets);
 	void NullTargets(Target& targts);
-	void error(const char *msg);
 
 //Thresholds
 	int minR = 0;
@@ -41,17 +40,22 @@
 struct Target{
 public:
 		double HorizontalAngle;
-		double VerticalAngle;
+		double VerticalLeftAngle;
+        double VerticalRightAngle;
 		double Horizontal_W_H_Ratio;
 		double Horizontal_H_W_Ratio;
-		double Vertical_W_H_Ratio;
-		double Vertical_H_W_Ratio;
+		double VerticalLeft_W_H_Ratio;
+		double VerticalLeft_H_W_Ratio;
+        double VerticalRight_W_H_Ratio;
+		double VerticalRight_H_W_Ratio;
 
 		Point HorizontalCenter;
-		Point VerticalCenter;
+		Point VerticalLeftCenter;
+		Point VerticalRightCenter;
 
 		bool HorizGoal;
-		bool VertGoal;
+		bool VertLeftGoal;
+		bool VertRightGoal;
 		bool HotGoal;
 
 	};
